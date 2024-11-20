@@ -145,7 +145,7 @@ with lib; let
     inherit (pkgs.stdenv.hostPlatform) isDarwin;
     baseDir =
       if isDarwin
-      then "\${TMPDIR}"
+      then "\${TMPDIR%/}"
       else "\${XDG_RUNTIME_DIR}";
   in "${baseDir}/${dir}";
 
